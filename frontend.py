@@ -1,7 +1,8 @@
 import streamlit as st
 import requests
 
-API_URL = "http://127.0.0.1:8000/predict" # The URL where the FastAPI server is running
+# API_URL = "http://127.0.0.1:8000/predict" # The URL where the FastAPI server is running
+API_URL = "https://web-production-2c19.up.railway.app/predict" # The URL where the FastAPI server is running
 
 st.title("Insurance Premium Category Predictor")
 st.markdown("Enter your details below:")
