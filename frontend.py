@@ -1,8 +1,14 @@
 import streamlit as st
 import requests
+import os
+
+from dotenv import load_dotenv
+load_dotenv()
 
 # API_URL = "http://127.0.0.1:8000/predict" # The URL where the FastAPI server is running
-API_URL = "https://web-production-2c19.up.railway.app/predict" # The URL where the FastAPI server is running
+
+# For local use, we can read from .env; for Streamlit Cloud, it comes from st.secrets
+API_URL = os.getenv("API_URL") or st.secrets["API_URL"]
 
 st.title("Insurance Premium Category Predictor")
 st.markdown("Enter your details below:")
